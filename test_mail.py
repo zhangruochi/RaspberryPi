@@ -12,9 +12,9 @@ def get_ips():
     try:
         result.remove('inet 127.0.0.1')
     except:
-        pass
-    
-    return result[0].strip("inet ")
+        pass    
+     
+    return ", ".join([ip.strip("inet ") for ip in result])
 
 
 def send_email(ip):
